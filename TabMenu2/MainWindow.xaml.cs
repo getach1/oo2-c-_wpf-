@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Microsoft.Win32;
 namespace TabMenu2
 {
     /// <summary>
@@ -29,5 +29,12 @@ namespace TabMenu2
         {
 
         }
+
+        private void update_profile_btn_Click(object sender, RoutedEventArgs e)
+        {
+            profile_update_form profile = new profile_update_form();
+            profile.Show();
+        }
+       
     }
 }

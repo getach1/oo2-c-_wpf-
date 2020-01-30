@@ -1,0 +1,56 @@
+﻿<Window x:Class="TabMenu2.profile_update_form"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TabMenu2"
+        Title="UPDATE PROFILE" Background="#FF49A435">
+
+    <Grid>
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF9C27B0">
+            <TextBlock Text="Hospital Managment" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontFamily="Champagne &amp; Limousines" />
+         
+        </Grid>
+        <Grid Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Full Name" Width="300" Grid.Column="0" Grid.Row="1" Margin="0,10,0,0"  FontFamily="serif" FontSize="20" FontWeight="Bold"/>
+            <TextBox Background="White" Height="40" Foreground="Black"  Width="300" x:Name="full_name" Grid.Column="0" Grid.Row="2"  FontSize="17"/>
+            <Label Content="Email" Width="300" Grid.Column="0" Grid.Row="3" FontFamily="serif" FontSize="20" FontWeight="Bold"/>
+            <TextBox Background="White" Height="40" Foreground="Black"  Width="300" x:Name="email" Grid.Column="0" Grid.Row="4"  FontSize="17"/>
+            <Label  Content="Phone" Width="300" Grid.Column="0" Grid.Row="5" FontFamily="serif" FontSize="20" FontWeight="Bold"/>
+            <TextBox Background="White"  Height="40" Foreground="Black" Width="300" x:Name="phone" Grid.Column="0" Grid.Row="6"  FontSize="17"/>
+            <Label Content="Sex" Width="300" Grid.Column="0" Grid.Row="7" FontFamily="serif" FontSize="20" FontWeight="Bold"/>
+            <TextBox Background="White"  Height="40" Foreground="Black" Width="300" x:Name="sex" Grid.Column="0" Grid.Row="8"  FontSize="17"/>
+            <Label Content="Age" Width="300" Grid.Column="0" Grid.Row="9" FontFamily="serif" FontSize="20" FontWeight="Bold"/>
+            <TextBox Background="White"  Height="40" Foreground="Black" Width="300" x:Name="age" Grid.Column="0" Grid.Row="10"  FontSize="17"/>
+
+            <Image Margin="12,30,16,71" x:Name="imgPhoto"
+        Stretch="Fill" Grid.Column="1" Grid.Row="1"  Grid.RowSpan="9" />
+            <Button Height="27" HorizontalAlignment="Left"
+         Name="btnLoad" VerticalAlignment="Bottom" Background="White" Foreground="DarkGreen"
+        Width="130" Grid.Column="1" Grid.Row="9" Click="btnLoad_Click">Load Image</Button>
+        </Grid>
+        <Button Height="40" HorizontalAlignment="Right"
+         Name="btnUpdate" VerticalAlignment="Bottom" Margin="40"
+        Width="150"  Click="btnUpdate_Click">Update Profile</Button>
+        
+    </Grid>
+</Window>

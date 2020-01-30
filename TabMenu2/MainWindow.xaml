@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Height="600" Width="1080"  WindowStartupLocation="CenterScreen">
+        <!--Height="6.00" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">-->
     <Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF9C27B0">
             <TextBlock Text="Hospital Managment" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontFamily="Champagne &amp; Limousines" />
-            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}">
+            <!--<Button HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}">
                 <materialDesign:PackIcon Kind="Power"/>
-            </Button>
+            </Button>-->
         </Grid>
         <Grid Margin="0 60 0 0">
             <dragablz:TabablzControl SelectionChanged="TabablzControl_SelectionChanged">
@@ -38,31 +39,37 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <Image Grid.Column="0" Source="STOP.jpg" Stretch="Fill"/>
                         <StackPanel Grid.Column="1" Orientation="Vertical"
                                     HorizontalAlignment="Right" VerticalAlignment="Center">
-                            <Label Content="Profile" Foreground="Wheat" FontFamily="serif" FontWeight="ExtraBold" 
+                            <Label Content="Profile" Foreground="White" FontFamily="serif" FontWeight="ExtraBold" 
                                    FontSize="20" FontStretch="ExtraExpanded" HorizontalAlignment="Right" />
                             <Grid >
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-
-                                <Label Content="Full Name"/>
-                                <TextBlock Text="" Name="name"/>
-                                <Label Content="Age" />
-                                <TextBlock Text="" Name="age"/>
-                                <Label Content="Sex" />
-                                <TextBlock Text="" Name="sex"/>
-                                <Label Content="Birth Date" />
-                                <TextBlock Text="" Name="bDate"/>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="1" Grid.Row="1" Content="Full Name" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock  Grid.Column="2"  Grid.Row="1" Text="" Name="name" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <Label Grid.Column="1" Grid.Row="2" Content="Age" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Grid.Column="1" Grid.Row="2"  Text="" Name="age" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <Label Grid.Column="3" Grid.Row="1"  Content="Sex"  FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="3" Grid.Row="1"  Text="" Name="sex" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <Label Grid.Column="3" Grid.Row="2"  Content="Birth Date" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Grid.Column="3" Grid.Row="2"  Text="" Name="bDate" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Grid>
-                            
+                            <Button Content="UDATE" Click="update_profile_btn_Click" x:Name="update_profile_btn" Margin="40"/>
                         </StackPanel>
                     </Grid>
-               
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
