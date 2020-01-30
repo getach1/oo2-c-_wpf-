@@ -1,0 +1,77 @@
+﻿<Window x:Class="TabMenu2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TabMenu2"
+        mc:Ignorable="d"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF9C27B0">
+            <TextBlock Text="Hospital Managment" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontFamily="Champagne &amp; Limousines" />
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}">
+                <materialDesign:PackIcon Kind="Power"/>
+            </Button>
+        </Grid>
+        <Grid Margin="0 60 0 0">
+            <dragablz:TabablzControl SelectionChanged="TabablzControl_SelectionChanged">
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController/>
+                </dragablz:TabablzControl.InterTabController>
+                <TabItem Header="HOME">
+                    <TextBlock Text="Hello World!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="REQUESTS">
+                    <TextBlock Text="Amazing designs!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="PRESCRIPTION">
+                    <TextBlock Text="Hello World!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="APPOINTMENT">
+                    <TextBlock Text="Amazing designs!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="PROFILE">
+                    <Grid Background="Teal">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image Grid.Column="0" Source="STOP.jpg" Stretch="Fill"/>
+                        <StackPanel Grid.Column="1" Orientation="Vertical"
+                                    HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Label Content="Profile" Foreground="Wheat" FontFamily="serif" FontWeight="ExtraBold" 
+                                   FontSize="20" FontStretch="ExtraExpanded" HorizontalAlignment="Right" />
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Full Name"/>
+                                <TextBlock Text="" Name="name"/>
+                                <Label Content="Age" />
+                                <TextBlock Text="" Name="age"/>
+                                <Label Content="Sex" />
+                                <TextBlock Text="" Name="sex"/>
+                                <Label Content="Birth Date" />
+                                <TextBlock Text="" Name="bDate"/>
+                            </Grid>
+                            
+                        </StackPanel>
+                    </Grid>
+               
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <materialDesign:PackIcon Kind="GithubCircle" Foreground="{DynamicResource PrimaryHueLightBrush}"/>
+                    </TabItem.Header>
+                    <TextBlock Text="github.com/Abel13/TabMenu2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </TabItem>
+                <Grid Height="100" Width="100"/>
+            </dragablz:TabablzControl>
+        </Grid>
+    </Grid>
+</Window>
